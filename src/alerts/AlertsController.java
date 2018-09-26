@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextInputDialog;
 
 /**
  * FXML Controller class
@@ -68,6 +69,19 @@ public class AlertsController implements Initializable {
             //faz outra coisa
         }
         
+        //----------------
+        
+        //Caixa de Entrada de Dados
+        TextInputDialog entrada = new TextInputDialog();
+        entrada.setTitle("Responda");
+        entrada.setHeaderText(null);
+        entrada.setContentText("Qual dua idade?");
+        
+        //Pegando o que a pessoa digitou
+        Optional<String> resposta2 = entrada.showAndWait();
+        
+        //Posso fazer o que quiser com a String
+        System.out.println("A idade digitada foi:" + resposta2.get());
         
     }
     
