@@ -30,8 +30,14 @@ public class AlertsController implements Initializable {
     @FXML
     private void alerta1(ActionEvent event) {
         
+        //Tipos de configuração de Icone
+        //Alert.AlertType.INFORMATION - Informação
+        //Alert.AlertType.ERROR - Erro
+        //Alert.AlertType.WARNING - Alerta
+        
         //Caixa de diálogo de informação
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        Alert alerta = new Alert(Alert.AlertType.WARNING);
+        
         alerta.setTitle("Caixa de Informação"); //Titulo da caixa
         alerta.setHeaderText("Cabeçalho da Caixa"); //Cabeçalho
         alerta.setContentText("Mensagem de informação"); //Mensagem
