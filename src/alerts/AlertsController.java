@@ -6,11 +6,13 @@
 package alerts;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 /**
  * FXML Controller class
@@ -36,16 +38,35 @@ public class AlertsController implements Initializable {
         //Alert.AlertType.WARNING - Alerta
         
         //Caixa de diálogo de informação
-        Alert alerta = new Alert(Alert.AlertType.WARNING);
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         
         alerta.setTitle("Caixa de Informação"); //Titulo da caixa
         alerta.setHeaderText("Cabeçalho da Caixa"); //Cabeçalho
+        
+        //Se nao quiser o cabeçalho coloca
+        //alerta.setHeaderText(null);
+        
         alerta.setContentText("Mensagem de informação"); //Mensagem
         
         alerta.showAndWait(); //comando para mostrar o diálogo
         
         //---------
         
+        //Caixa de Confirmação
+        Alert alerta2 = new Alert(Alert.AlertType.CONFIRMATION);
+        alerta2.setTitle("Confirme");
+        alerta2.setHeaderText(null);
+        alerta2.setContentText("Deseja mesmo excluir o saldo da sua conta?");
+        
+        //Pegando qual o botao foi pressionado
+        Optional<ButtonType> resposta = alerta2.showAndWait();
+        
+        //Verificar qual o botao pressionado
+        if(resposta.get() == ButtonType.OK){ //pressionou o OK
+            //faz alguma coisa
+        }else{
+            //faz outra coisa
+        }
         
         
     }
